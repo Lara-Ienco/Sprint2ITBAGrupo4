@@ -6,9 +6,9 @@ body {
 }
 
 header {
-    background: #082429;
+    background: #471c01ef;
     color: #fff;
-    padding: 20px 0;
+    padding: 15px 0;
     text-align: center;
 }
 
@@ -33,11 +33,79 @@ main {
 }
 
 footer {
-    background: #082429;
+    background: #471c01ef;
     color: #fff;
     text-align: center;
     padding: 10px 0;
     position: fixed;
     width: 100%;
     bottom: 0;
+}
+
+.hero-banner {
+    height: 100vh;
+    background: linear-gradient(135deg, #0077b6, #00b4d8);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+}
+
+.hero-banner .logo {
+    width: 120px;
+    margin-bottom: 20px;
+}
+
+.btn {
+    background: #fff;
+    color: #0077b6;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+#destacados {
+    padding: 40px 20px;
+    background: #fff;
+}
+
+.productos {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+.producto {
+    background: #e0e0e0;
+    padding: 20px;
+    border-radius: 8px;
+    width: 200px;
+    text-align: center;
+}
+
+.header-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.logo-izquierda {
+    position: absolute;
+    left: 20px;
+}
+
+.logo-header {
+    width: 50px;
+    height: auto;
+}
+
+.titulo-centro {
+    margin: 0;
+    font-size: 2rem;
+    color: white;
 }
