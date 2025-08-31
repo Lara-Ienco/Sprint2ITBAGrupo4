@@ -8,7 +8,12 @@
 </head>
 <body>
     <header>
-        <h1>Hermanos Jota</h1>
+    <div class="header-container">
+        <div class="logo-izquierda">
+            <img src="imagenes/logo.svg" alt="Logo Hermanos Jota" class="logo-header">
+        </div>
+        <h1 class="titulo-centro">Hermanos Jota</h1>
+    </div>
         <nav>
             <ul>
                 <li><a href="catalogo/catalogo.html">Catalogo</a></li>
@@ -20,13 +25,26 @@
         </nav>
     </header>
     <main>
+        <section class="hero-banner">
+            <img src="imagenes/logo.svg" alt="Logo Hermanos Jota" class="logo">
+            <h2>Calidad y diseño para tu hogar</h2>
+            <p>Descubrí nuestros productos más elegidos</p>
+            <a href="#destacados" class="btn">Ver productos</a>
+        </section>
+
+        <section id="destacados">
+            <h2>Productos Destacados</h2>
+            <div class="productos"></div>   
+        </section>
+
         <section>
-            <h2>Bienvenido</h2>
-            <p>Este es el inicio del proyecto.</p>
+            <h2></h2>
+            <p></p>
         </section>
     </main>
     <footer>
         <p>&copy; 2025 ITBA Grupo 4</p>
     </footer>
+    <script src="script.js"></script>
 </body>
 </html>
