@@ -1,0 +1,167 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+}
+
+header {
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: lightgray;
+  padding: 20px;
+  z-index: 1000;
+}
+
+.menu-mobile{
+    display: block
+}
+
+nav{
+    display: none
+}
+
+ul {
+    width: 300px;
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
+    padding-left: 0; 
+}
+
+main {
+  margin: auto;
+  background-color: #F5E6D3;
+  padding: 20px;
+  min-height: 100vh;
+}
+
+a {
+  text-decoration: none;
+  color: inherit; 
+}
+
+section {
+  display: flex;
+  flex-direction: column;
+}
+
+.card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  text-align: center;
+  background: #fff;
+  transition: transform 0.2s;
+  padding: 20px;
+  max-width: 350px;
+  cursor: pointer;
+}
+
+.card:hover {
+  transform: scale(1.03);
+}
+
+.card img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+}
+
+.precio {
+  color: #007b00;
+  font-weight: bold;
+}
+
+.detalle {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.detalle-container img {
+  width: 100%;
+  border-radius: 8px;
+  height: auto;
+}
+
+.detalle-producto-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+button {
+  padding: 10px 15px;
+  background: #007b00;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* 🔹 Tablet */
+@media (min-width: 600px) {
+  section {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+
+  .card {
+    width: 45%;
+  }
+}
+
+/* 🔹 Desktop */
+@media (min-width: 900px) {
+  header {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  nav{
+    display: block;
+  }
+
+  .menu-mobile{
+    display: none
+  }
+
+  .card {
+    width: 25%;
+  }
+
+  section {
+    flex-direction: row; 
+    justify-content: space-evenly;
+  }
+
+  .detalle {
+    flex-direction: row; 
+    justify-content: space-evenly;
+  }
+
+  .detalle-container img {
+    width: 50%;
+  }
+
+  .detalle-producto-container {
+    width: 50%;
+  }
+
+  .detalle-container{
+    display: flex;
+    width: 80%;
+    margin: auto;
+  }
+}
