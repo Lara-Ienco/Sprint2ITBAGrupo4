@@ -1,41 +1,147 @@
+
+* {
+    box-sizing: border-box;
+}
+
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background: #f5f5f5;
+    background: #F5E6D3;
+    color: #212121;
 }
 
+/* ======= HEADER ======= */
 header {
-    background: #082429;
+    background: #8D6E63;
     color: #fff;
-    padding: 20px 0;
-    text-align: center;
+    padding: 1rem 2rem;
 }
+
+.header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+
+.logo-izquierda {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+}
+
+.logo-header {
+    width: 50px;
+    margin-top: 0; /*subo un poco el logo*/
+    height: auto;
+}
+
+.titulo-centro {
+    font-size: 1.5rem;
+    margin: 0;
+    color: white
+}
+
+/* ======= NAV ======= */
+nav {
+    margin: 0;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 
 nav ul {
     list-style: none;
     padding: 0;
-    margin: 10px 0 0 0;
+    margin:  0;
     display: flex;
-    justify-content: center;
-    gap: 20px;
+    gap: 2rem;
 }
 
 nav a {
     color: #fff;
     text-decoration: none;
     font-weight: bold;
+    font-size: 1rem;
 }
 
+/* ======= MAIN ======= */
 main {
-    padding: 40px 20px;
+    padding: 2rem 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     text-align: center;
 }
 
+/* ======= HERO BANNER ======= */
+.hero-banner {
+    width: 100%;
+    background: linear-gradient(135deg, #F5E6D3, #FFEB99);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 3rem 1rem;
+    text-align: center;
+}
+
+.hero-banner .logo {
+    width: 40vw;
+    max-width: 120px;
+    margin-bottom: 1rem;
+}
+
+.btn {
+    background: #FFD54F;
+    color: #212121;
+    padding: 0.8rem 1.2rem;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: 1rem;
+    transition: background 0.3s;
+}
+
+.btn:hover {
+    background: #FFEB99;
+}
+
+/* ======= PRODUCTOS DESTACADOS ======= */
+#destacados {
+    width: 100%;
+    padding: 2rem 1rem;
+    background: #fff;
+}
+
+.productos {
+   display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.producto {
+    background: #fff;
+    padding: 1rem;
+    border-radius: 8px;
+    width: 250px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+/* ======= FOOTER ======= */
 footer {
-    background: #082429;
+    background: #8D6E63;
     color: #fff;
     text-align: center;
+<<<<<<< HEAD
     padding: 10px 0;
 
     width: 100%;
@@ -90,3 +196,51 @@ footer {
     font-weight: bold;
     color: #082429;
 }
+=======
+    padding: 1rem;
+    font-size: 0.9rem;
+}
+
+/* ======= MEDIA QUERIES ======= */
+/* @media (min-width: 768px) {
+    .header-container {
+        flex-direction: row;
+        justify-content: center;
+        position: relative;
+    }
+
+    .logo-header {
+        position: absolute;
+        left: 2rem;
+        width: 5vw;
+        min-width: 40px;
+    }
+
+    .titulo-centro {
+        font-size: 2rem;
+    }
+
+    nav ul {
+        flex-direction: row;
+        justify-content: center;
+        gap: 2rem;
+    }
+
+    .hero-banner {
+        height: 100vh;
+        padding: 0 5%;
+    }
+
+    .productos {
+        flex-direction: row;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .producto {
+        width: 22%;
+        min-width: 200px;
+    }
+} */
+
+>>>>>>> 25b4b3688121b1aa197395c9e78310d05622d9ae
