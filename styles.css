@@ -97,6 +97,13 @@ main {
     margin-bottom: 1rem;
 }
 
+/* quiero que la <img src="imagenes/hero.png"  alt="Muebles de diseño Hermanos Jota" id="hero-imagen"> se vea mas chica*/
+#hero-imagen {
+    width: 60vw;
+    max-width:  100%;
+    margin-bottom: 1rem;
+    border-radius: 10px;
+}   
 .btn {
     background: #FFD54F;
     color: #212121;
@@ -112,36 +119,11 @@ main {
     background: #FFEB99;
 }
 
-/* ======= PRODUCTOS DESTACADOS ======= */
-#destacados {
-    width: 100%;
-    padding: 2rem 1rem;
-    background: #fff;
-}
-
-.productos {
-   display: flex;
-    flex-direction: row;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 2rem;
-}
-
-.producto {
-    background: #fff;
-    padding: 1rem;
-    border-radius: 8px;
-    width: 250px;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-    text-align: center;
-}
-
 /* ======= FOOTER ======= */
 footer {
     background: #8D6E63;
     color: #fff;
     text-align: center;
-<<<<<<< HEAD
     padding: 10px 0;
 
     width: 100%;
@@ -196,51 +178,3 @@ footer {
     font-weight: bold;
     color: #082429;
 }
-=======
-    padding: 1rem;
-    font-size: 0.9rem;
-}
-
-/* ======= MEDIA QUERIES ======= */
-/* @media (min-width: 768px) {
-    .header-container {
-        flex-direction: row;
-        justify-content: center;
-        position: relative;
-    }
-
-    .logo-header {
-        position: absolute;
-        left: 2rem;
-        width: 5vw;
-        min-width: 40px;
-    }
-
-    .titulo-centro {
-        font-size: 2rem;
-    }
-
-    nav ul {
-        flex-direction: row;
-        justify-content: center;
-        gap: 2rem;
-    }
-
-    .hero-banner {
-        height: 100vh;
-        padding: 0 5%;
-    }
-
-    .productos {
-        flex-direction: row;
-        justify-content: center;
-        flex-wrap: wrap;
-    }
-
-    .producto {
-        width: 22%;
-        min-width: 200px;
-    }
-} */
-
->>>>>>> 25b4b3688121b1aa197395c9e78310d05622d9ae
