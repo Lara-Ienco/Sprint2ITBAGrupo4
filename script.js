@@ -29,47 +29,56 @@ productos.forEach(p => {
 
 let currentIndex = 0;
 
-// cuántos items entran por pantalla -> VER PQ ESTO NO ESTA ANDANDO EN LOS PRIMEROS 3 !!!
+// de a cuantos items va a ir mostrando. osea una vez q moves, cuantos nuevos aparecen?
 function itemsPerPage(){
-  if (window.matchMedia("(max-width:600px)").matches) return 1; // telefono
-  if (window.matchMedia("(max-width:900px)").matches) return 2; // tablet
-  if (window.matchMedia("(max-width:1200px)").matches) return 3; // desktop pequeño
-  return 4;
+  if (window.matchMedia("(min-width:1201px)").matches) return 4; // desktop grande
+  if (window.matchMedia("(min-width:901px)").matches)  return 3; // desktop chico
+  if (window.matchMedia("(min-width:601px)").matches)  return 2; // tablet
+  return 1; // móvil
 }
 
-function totalPages(){ // cuántas "páginas" de items hay
-  return Math.ceil(track.children.length / itemsPerPage()); // redondeo para arriba
+function totalPages(){
+  return Math.ceil(track.children.length / itemsPerPage());
 }
 
-function updateButtons(){ // habilita/deshabilita botones
-  prevBtn.disabled = currentIndex === 0; // si estoy en la primer página
-  nextBtn.disabled = currentIndex >= totalPages() - 1; // si estoy en la última página
+function updateButtons(){
+  prevBtn.disabled = currentIndex === 0;
+  nextBtn.disabled = currentIndex >= totalPages() - 1;
 }
 
-function updateCarousel(){ // mueve el track
-  const itemWidth = track.children[0].offsetWidth + parseInt(getComputedStyle(track).gap); // ancho de un item + gap
-  const moveX = -(currentIndex * itemsPerPage() * itemWidth); // cuánto moverme
-  track.style.transform = `translateX(${moveX}px)`; // muevo el track
-  updateButtons(); // actualizo botones
+function updateCarousel(){
+  if (!track.children.length) return;
+
+  // ancho real de una card + gap actual (coincide con CSS)
+  const styles = getComputedStyle(track);
+  const gap = parseInt(styles.gap) || 0;
+  const itemWidth = track.children[0].offsetWidth + gap;
+
+  const moveX = -(currentIndex * itemsPerPage() * itemWidth);
+  track.style.transform = `translateX(${moveX}px)`;
+  updateButtons();
 }
 
-nextBtn.addEventListener("click", () => { 
-  if (currentIndex < totalPages() - 1){ // si no estoy en la última página
-    currentIndex++; // avanzo una página
-    updateCarousel(); // actualizo el carrusel
+nextBtn.addEventListener("click", () => {
+  if (currentIndex < totalPages() - 1){
+    currentIndex++;
+    updateCarousel();
   }
 });
 
-prevBtn.addEventListener("click", () => { 
-  if (currentIndex > 0){ // si no estoy en la primera página
-    currentIndex--; // retrocedo una página
-    updateCarousel(); // actualizo el carrusel
+prevBtn.addEventListener("click", () => {
+  if (currentIndex > 0){
+    currentIndex--;
+    updateCarousel();
   }
 });
 
-window.addEventListener("resize", () => { // al cambiar tamaño de ventana VER PQ NO ANDA BIEEENN
-  currentIndex = Math.min(currentIndex, totalPages() - 1); // ajusto currentIndex si es necesario
-  updateCarousel(); // actualizo el carrusel
+// recalcular al redimensionar y cuando termina de cargar todo
+window.addEventListener("resize", () => {
+  currentIndex = Math.min(currentIndex, totalPages() - 1);
+  updateCarousel();
 });
+window.addEventListener("load", updateCarousel);
 
-updateCarousel(); // inicializo el carrusel 
+// inicial
+updateCarousel();

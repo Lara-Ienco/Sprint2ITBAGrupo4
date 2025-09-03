@@ -73,7 +73,6 @@ nav a {
 /* ======= MAIN ======= */
 main {
     padding: 2rem 1rem;
-    display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
@@ -173,19 +172,18 @@ footer {
 
 
 /* ======= carousel ======= */
-:root { --gap: 20px; } /* Espacio entre tarjetas */
+:root { --gap: 20px; }
 
 .carousel-container{
   position: relative;
   max-width: 1100px;
   margin: 0 auto 48px;
-  overflow: visible;
 }
 
 .carousel-window{
-  overflow: hidden;
+  overflow: hidden;      /* oculta lo que queda fuera de la vista */
   width: 100%;
-  padding: 0 10px;   /* espacio a los lados */
+  padding: 0 10px;
 }
 
 .carousel-track{
@@ -194,29 +192,53 @@ footer {
   gap: var(--gap);
   will-change: transform;
   transition: transform .45s ease;
-  margin: 0 -10px;   /* compensa el padding del window */
+  margin: 0 -10px;
 }
 
-/* 4 cards visibles + 3 gaps = 100% exacto (sin márgenes en .card) */
+/* --- MOBILE FIRST: 1 card por vista --- */
 .card{
-  flex: 0 0 calc((100% - (3 * var(--gap))) / 4);
+  flex: 0 0 100%;/* ocupa todo el ancho -> entoncs solo entra 1 */
   background: #fff;
-  padding: 15px;
-  border-radius: 12px;
+  padding: 12px;
+  border-radius: 1px;
   box-shadow: 0 4px 8px rgba(0,0,0,.1);
   text-align: center;
 }
 
-.card{ margin: 0; }
-
 .card img{
-  width: 100%;
-  height: 150px;
+  width: 60%;
+  height: 140px;
   object-fit: cover;
   border-radius: 8px;
 }
 
-/* botones por fuera del carrusel */
+/* --- Tablet: 2 por vista --- */
+@media (min-width: 601px) {
+  .card{
+    flex: 0 0 calc((100% - var(--gap)) / 2);
+    padding: 12px;
+  }
+  .card img{ height: 160px; }
+}
+
+/* --- Desktop chico: 3 por vista --- */
+@media (min-width: 901px) {
+  .card{
+    flex: 0 0 calc((100% - (2 * var(--gap))) / 3);
+  }
+  .card img{ height: 180px; }
+}
+
+/* --- Desktop grande: 4 por vista --- */
+@media (min-width: 1201px) {
+    .card{
+        flex: 0 0 calc((100% - (3 * var(--gap))) / 4);
+    }
+    .card img{ height: 220px; }
+
+
+}
+
 .carousel-btn{
   position: absolute;
   top: 50%;
@@ -229,13 +251,14 @@ footer {
   border-radius: 50%;
   cursor: pointer;
   font-size: 1.2rem;
-  opacity: .9;
-  z-index: 5;
+  opacity: .95;
+  z-index: 50;
 }
 
-.carousel-btn.prev{ left: -52px; }  
-.carousel-btn.next{ right: -52px; }
+.carousel-btn.next { right: 10px; }
+.carousel-btn.prev{ left: 10px; }
 
-.carousel-btn:hover{ transform: translateY(-50%) scale(1.06); }
+.carousel-btn:hover{ transform: translateY(-50%) scale(1.06); } 
 
 .carousel-btn[disabled]{ opacity:.35; cursor: default; }
+
