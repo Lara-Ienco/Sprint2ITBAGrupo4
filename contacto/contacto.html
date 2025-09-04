@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles.css">
+    <title>Contacto</title>
+</head>
+<body>
+    <header>
+    <div class="header-container">
+        <div class="logo-izquierda">            
+            <img src="../imagenes/logo.svg " alt="Logo Hermanos Jota" class="logo-header">
+            <h1 class="titulo-centro">Hermanos Jota</h1>
+        </div>        
+    
+        <nav>
+            <ul>
+                <li><a href="../index.html">Inicio</a></li>
+                <li><a href="catalogo/catalogo.html">Catálogo</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+                <li><a href="#">🛒 Carrito (0)</a></li>
+            </ul>
+        </nav>
+        </div>
+    </header>
+    <form novalidate class="contact-form">
+        
+        <label for="nombre">Nombre</label>
+        <input type="text" id="nombre" required>
+
+        <label for="email">Email</label>
+        <input id="email" type="email">
+
+        <label>Mensajes</label>
+        <input type="text" id="message">
+
+        <p id="estado"></p>
+        <button type="submit">Enviar</button>
+
+  
+    </form>
+
+    <script src="main.js"></script>
+</body>
+</html>
