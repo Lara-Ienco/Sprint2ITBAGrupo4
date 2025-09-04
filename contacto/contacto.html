@@ -4,13 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../styles.css">
+    <script src="contacto.js" defer></script>
     <title>Contacto</title>
 </head>
 <body>
     <header>
     <div class="header-container">
-        <div class="logo-izquierda">            
-            <img src="../imagenes/logo.svg " alt="Logo Hermanos Jota" class="logo-header" href="../index.html">
+        <div class="logo-izquierda">        
+            <a href="../index.html">   
+            <img src="../imagenes/logo.svg " alt="Logo Hermanos Jota" class="logo-header" >
+            </a>
             <h1 class="titulo-centro">Hermanos Jota</h1>
         </div>        
     
@@ -24,7 +27,8 @@
         </nav>
         </div>
     </header>
-    <form novalidate class="contact-form">
+    <form novalidate id = "formularioDeContacto" class="contact-form">
+        <h1>Contactanos</h1>
         
         <label for="nombre">Nombre</label>
         <input type="text" id="nombre" required>
@@ -33,7 +37,7 @@
         <input id="email" type="email">
 
         <label>Mensajes</label>
-        <input type="text" id="message">
+        <textarea id="message" required></textarea>
 
         <p id="estado"></p>
         <button type="submit">Enviar</button>
@@ -41,6 +45,12 @@
   
     </form>
 
-    <script src="main.js"></script>
+    <footer>
+        <p>&copy; 2025 Hermanos Jota - Todos los derechos reservados</p>
+        <p>📍 Dirección: Calle que no existe 333, Ciudad</p>
+        <p>📞 Tel: (011) 1111-2222</p>
+
+    </footer>
+
 </body>
 </html>
