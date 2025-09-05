@@ -6,7 +6,7 @@ const productos = [
   { id: 3, nombre: "blaa", precio: 28000, imagen: "imagenes/Butaca Mendoza.png" },
   { id: 4, nombre: "blaa", precio: 60000, imagen: "imagenes/Mesa Comedor Pampa.png" },
   { id: 5, nombre: "blaa", precio: 15000, imagen: "imagenes/Mesa de Centro Araucaria.png" },
-  { id: 6, nombre: "blaa", precio: 35000, imagen: "imagenes/sillon_destacado1.png" },
+  { id: 6, nombre: "blaa", precio: 35000, imagen: "imagenes/Silla Belgrano.png" },
   { id: 7, nombre: "blaa", precio: 9000, imagen: "imagenes/Aparador Uspallata.png" },
   { id: 8, nombre: "blaa", precio: 75000, imagen: "imagenes/Biblioteca Recoleta.png"}
 ];
