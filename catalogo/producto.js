@@ -1,5 +1,4 @@
 function renderProductoDetalle() {
-  console.log('Renderizando producto detalle');
   const hash = window.location.hash;
   const queryString = hash.split('?')[1] || '';
   const params = new URLSearchParams(queryString);
@@ -38,6 +37,8 @@ function renderProductoDetalle() {
 
     alert("Producto agregado al carrito");
   }
+
+  //agregar función al botón
 
   document.querySelector("button").onclick = agregarAlCarrito;
 

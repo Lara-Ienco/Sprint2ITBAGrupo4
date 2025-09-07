@@ -119,7 +119,7 @@ function abrirCarrito() {
   if (modal) {
     modal.style.display = 'block';
   }
-  console.log('Abriendo carrito');
+  renderCarrito();
 }
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -141,11 +141,15 @@ function obtenerCarrito() {
 // Guardar carrito a localStorage
 function guardarCarrito(carrito) {
   localStorage.setItem("carrito", JSON.stringify(carrito));
+  console.log(JSON.parse(localStorage.getItem("carrito")));
+
 }
 
 
 // Renderiza carrito completo en la vista carrito
 function renderCarrito() {
+  console.log(JSON.parse(localStorage.getItem("carrito")));
+
   let carrito = obtenerCarrito();
   const contenedor = document.getElementById("carritoItemsContainer");
   if (!contenedor) return;
