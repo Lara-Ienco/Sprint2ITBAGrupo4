@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hermanos Jota</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="catalogo/catalogo.css" />
+
     <script src="script.js" defer></script>
 </head>
 <body>
@@ -20,43 +22,27 @@
         <nav>
             <ul>
                 <li><a href="index.html">Inicio</a></li>
-                <li><a href="catalogo/catalogo.html">Catálogo</a></li>
-                <li><a href="contacto/contacto.html">Contacto</a></li>
+                <li><a href="#/catalogo">Catálogo</a></li>
+                <li><a href="#/contacto">Contacto</a></li>
                 <li><a href="#">🛒 Carrito (0)</a></li>
             </ul>
         </nav>
         </div>
     </header>
-    <main>
-        <section class="hero-banner">
-           <img src="imagenes/hero.png"  alt="Muebles de diseño Hermanos Jota" id="hero-imagen">
-            <div class="hero-texto">
-                <h2>Diseño artesanal con estilo moderno</h2>
-                <p>Más de 30 años fabricando muebles únicos</p>
-                <a href="catalogo/catalogo.html" class="btn">Ver Catálogo</a>
-            </div>
-        </section>
+   <main id="app">
 
-        <section class="destacados">
-            <h2>Productos Destacados</h2>
-
-            <div class="carousel-container">
-                <button class="carousel-btn prev" aria-label="Anterior">⟨</button>
-
-                <div class="carousel-window">
-                <div id="productos-destacados" class="carousel-track"></div>
-                </div>
-
-                <button class="carousel-btn next" aria-label="Siguiente">⟩</button>
-            </div>
-        </section>
-    </main>
+   </main>
+<!-- Al final del body cargar los .js que tengan datos -->
+<script src="productos.js" defer></script>
+<script src="catalogo/catalogo.js" defer></script>
+<script src="catalogo/producto.js" defer></script>
+<script src="contacto/contacto.js" defer></script>
+<script src="route.js" defer></script>
 
     <footer>
         <p>&copy; 2025 Hermanos Jota - Todos los derechos reservados</p>
         <p>📍 Dirección: Calle que no existe 333, Ciudad</p>
         <p>📞 Tel: (011) 1111-2222</p>
-
     </footer>
 </body>
 </html>

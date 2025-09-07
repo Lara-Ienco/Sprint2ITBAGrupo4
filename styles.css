@@ -1,3 +1,10 @@
+:root {
+  --siena: #A0522D;
+  --salvia: #87A96B;
+  --alabastro: #F5E6D3;
+  --oro: #D4A437;
+  --rosa: #C47A6D;
+}
 
 * {
     box-sizing: border-box;
@@ -13,7 +20,7 @@ body {
 
 /* ======= HEADER ======= */
 header {
-    background: #8D6E63;
+    background: var(--siena);
     color: #fff;
     padding: 1rem 2rem;
 }
@@ -32,12 +39,14 @@ header {
     display: flex;
     align-items: center;
     gap: 0.8rem;
+    
 }
 
 .logo-header {
     width: 50px;
     margin-top: 0; /*subo un poco el logo*/
     height: auto;
+    background-color: var(--oro);
 }
 
 .titulo-centro {
@@ -119,7 +128,7 @@ main {
 
 /* ======= FOOTER ======= */
 footer {
-    background: #8D6E63;
+    background: var(--siena);
     color: #fff;
     text-align: center;
     padding: 10px 0;

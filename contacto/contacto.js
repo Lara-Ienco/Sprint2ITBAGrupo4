@@ -1,7 +1,8 @@
-const formulario = document.getElementById("formularioDeContacto");
-const estado = document.getElementById("estado");
 
-function mandoElFormulario(event) {
+function initContacto() {
+  const formulario = document.getElementById("formularioDeContacto");
+const estado = document.getElementById("estado");
+  function mandoElFormulario(event) {
 
   event.preventDefault();
 
@@ -26,3 +27,4 @@ function mandoElFormulario(event) {
 }
 
 formulario.addEventListener("submit", mandoElFormulario);
+}
