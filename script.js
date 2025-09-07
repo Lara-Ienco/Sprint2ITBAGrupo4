@@ -124,13 +124,16 @@ function abrirCarrito() {
 
 document.addEventListener('DOMContentLoaded', () => {
   const abrirbtn = document.getElementById('carrito');
+  
   if (abrirbtn) {
-    abrirbtn.addEventListener('click', (e) => {
-      e.preventDefault();  // evitar recarga por href=""
+    abrirbtn.addEventListener('click', function (e) {
+      e.preventDefault();
+      e.stopPropagation(); // <-- detiene que el evento burbujee
       abrirCarrito();
     });
   }
 });
+
 
 
 
@@ -154,7 +157,7 @@ function renderCarrito() {
   const contenedor = document.getElementById("carritoItemsContainer");
   if (!contenedor) return;
   contenedor.innerHTML = "";
-
+//for
   carrito.forEach(producto => {
     const div = document.createElement("div");
     div.className = "carrito-item";
@@ -202,14 +205,6 @@ const btnCerrar = document.getElementById('cerrarCarritoBtn');
 if (btnCerrar) {
   btnCerrar.addEventListener('click', cerrarModalCarrito);
 }
-
-// Opcional: cerrar modal si se hace click fuera del contenido
-window.addEventListener('click', function(event) {
-  const modal = document.getElementById('carritoModal');
-  if (event.target === modal) {
-    modal.style.display = 'none';
-  }
-});
 
 
 document.getElementById("vaciarCarritoBtn")?.addEventListener("click", vaciarCarrito);

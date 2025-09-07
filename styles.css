@@ -16,9 +16,15 @@ body {
     padding: 0;
     background: #F5E6D3;
     color: #212121;
+     display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
-
+main{
+  flex:1;
+}
 /* ======= HEADER ======= */
+
 header {
     background: var(--siena);
     color: #fff;
@@ -344,7 +350,7 @@ footer {
   height: 100%;
   overflow: auto;
   background-color: rgba(0,0,0,0.5);
-  display: block;
+  display: none;
   font-family: Arial, sans-serif;
 }
 
