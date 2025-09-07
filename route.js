@@ -10,7 +10,6 @@ function loadPage(url) {
       app.innerHTML = html;
     });
 }
-
 async function router() {
   const hash = location.hash.slice(1) || '/';
 
@@ -18,18 +17,19 @@ async function router() {
     await loadPage('home.html');
     if (typeof initCarousel === 'function') initCarousel();
   } else if (hash === '/catalogo') {
-    await loadPage('catalogo/catalogo.html');
+    await loadPage('catalogo/catalogo.html'); 
     if (typeof renderCatalogo === 'function') renderCatalogo();
   } else if (hash.startsWith('/producto')) {
-    await loadPage('producto/producto.html');
+    await loadPage('catalogo/producto.html');
     if (typeof renderProductoDetalle === 'function') renderProductoDetalle();
   } else if (hash === '/contacto') {
     await loadPage('contacto/contacto.html');
     if (typeof initContacto === 'function') initContacto();
-  } else {
+  }else {
     app.innerHTML = '<h1>404 - Página no encontrada</h1>';
   }
 }
+
 
 
 

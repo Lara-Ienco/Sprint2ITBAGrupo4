@@ -24,19 +24,35 @@
                 <li><a href="index.html">Inicio</a></li>
                 <li><a href="#/catalogo">Catálogo</a></li>
                 <li><a href="#/contacto">Contacto</a></li>
-                <li><a href="#">🛒 Carrito (0)</a></li>
+                <li><a id="carrito" href="">🛒 Carrito (<span id="contador-carrito">0</span>)</a></li>
+
             </ul>
         </nav>
         </div>
     </header>
    <main id="app">
-
+       
    </main>
+/* Modal Carrito , no puede estar el app porque ees el dinamico */
+    <div id="carritoModal">
+        <div class="modal-content">
+            <div class="modal-header">
+            <h4>Carrito de Compras</h4>
+            <button class="close-btn" id="cerrarCarritoBtn" aria-label="Cerrar">&times;</button>
+            </div>
+            <div class="modal-body" id="carritoItemsContainer">
+            <!-- Productos cargan aquí -->
+            </div>
+            <div class="total-pagar" id="totalPagar">Total a pagar: $0</div>
+            <button class="vaciar-btn" id="vaciarCarritoBtn">Vaciar carrito</button>
+ </div>
+</div>
 <!-- Al final del body cargar los .js que tengan datos -->
 <script src="productos.js" defer></script>
 <script src="catalogo/catalogo.js" defer></script>
 <script src="catalogo/producto.js" defer></script>
 <script src="contacto/contacto.js" defer></script>
+<script src="carrito/carrito.js" defer></script>
 <script src="route.js" defer></script>
 
     <footer>

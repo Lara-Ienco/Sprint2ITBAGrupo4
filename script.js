@@ -1,4 +1,4 @@
-const productos = [
+const productos2 = [
   { id: 1, nombre: "blaa", precio: 12000, imagen: "imagenes/Escritorio Costa.png" },
   { id: 2, nombre: "blaa", precio: 45000, imagen: "imagenes/Sofá Patagonia.png" },
   { id: 3, nombre: "blaa", precio: 28000, imagen: "imagenes/Butaca Mendoza.png" },
@@ -20,7 +20,7 @@ function initCarousel() {
   track.innerHTML = '';
 
   // renderizar productos
-  productos.forEach(p => {
+  productos2.forEach(p => {
     const card = document.createElement("div");
     card.className = "card";
     card.innerHTML = `
@@ -101,3 +101,114 @@ function loadPage(url) {
       app.innerHTML = '<h1>404 - Página no encontrada</h1>';
     });
 }
+
+// Actualiza contador carrito en encabezado
+function actualizarContadorCarrito() {
+  let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+  let cantidadTotal = carrito.reduce((acc, p) => acc + p.cantidad, 0);
+  let span = document.getElementById("contador-carrito");
+  if (span) {
+    span.textContent = cantidadTotal;
+  }
+}
+
+document.addEventListener("DOMContentLoaded", actualizarContadorCarrito);
+
+function abrirCarrito() {
+  const modal = document.getElementById('carritoModal');
+  if (modal) {
+    modal.style.display = 'block';
+  }
+  console.log('Abriendo carrito');
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  const abrirbtn = document.getElementById('carrito');
+  if (abrirbtn) {
+    abrirbtn.addEventListener('click', (e) => {
+      e.preventDefault();  // evitar recarga por href=""
+      abrirCarrito();
+    });
+  }
+});
+
+
+
+
+function obtenerCarrito() {
+  return JSON.parse(localStorage.getItem("carrito")) || [];
+}
+// Guardar carrito a localStorage
+function guardarCarrito(carrito) {
+  localStorage.setItem("carrito", JSON.stringify(carrito));
+}
+
+
+// Renderiza carrito completo en la vista carrito
+function renderCarrito() {
+  let carrito = obtenerCarrito();
+  const contenedor = document.getElementById("carritoItemsContainer");
+  if (!contenedor) return;
+  contenedor.innerHTML = "";
+
+  carrito.forEach(producto => {
+    const div = document.createElement("div");
+    div.className = "carrito-item";
+    div.innerHTML = `
+      <img src="${producto.imagen}" alt="${producto.nombre}" />
+      <div class="producto-info">
+        <p class="nombre">${producto.nombre}</p>
+        <p class="precio">$${producto.precio}</p>
+      </div>
+      <div class="cantidad-control">
+        <button onclick="modificarCantidad(${producto.id}, -1)">-</button>
+        <input type="text" value="${producto.cantidad}" readonly />
+        <button onclick="modificarCantidad(${producto.id}, 1)">+</button>
+      </div>
+    `;
+    contenedor.appendChild(div);
+  });
+
+  // Mostrar total
+  const totalElem = document.getElementById("totalPagar");
+  if (totalElem) {
+    const total = carrito.reduce((acc, p) => acc + p.precio * p.cantidad, 0);
+    totalElem.textContent = `Total a pagar: $${total.toLocaleString()}`;
+  }
+}
+
+
+// Vaciar el carrito completo
+function vaciarCarrito() {
+  localStorage.removeItem("carrito");
+  actualizarContadorCarrito();
+  renderCarrito();
+}
+
+// Función para cerrar el modal
+function cerrarModalCarrito() {
+  const modal = document.getElementById('carritoModal');
+  if (modal) {
+    modal.style.display = 'none';
+  }
+}
+
+// Asignar evento click al botón cerrar
+const btnCerrar = document.getElementById('cerrarCarritoBtn');
+if (btnCerrar) {
+  btnCerrar.addEventListener('click', cerrarModalCarrito);
+}
+
+// Opcional: cerrar modal si se hace click fuera del contenido
+window.addEventListener('click', function(event) {
+  const modal = document.getElementById('carritoModal');
+  if (event.target === modal) {
+    modal.style.display = 'none';
+  }
+});
+
+
+document.getElementById("vaciarCarritoBtn")?.addEventListener("click", vaciarCarrito);
+
+
+

@@ -1,4 +1,5 @@
 function renderProductoDetalle() {
+  console.log('Renderizando producto detalle');
   const hash = window.location.hash;
   const queryString = hash.split('?')[1] || '';
   const params = new URLSearchParams(queryString);
@@ -21,4 +22,23 @@ function renderProductoDetalle() {
   document.getElementById("precio").innerText = "$" + producto.precio.toLocaleString();
   document.getElementById("imagen").src = "../" + producto.imagen;
   document.getElementById("imagen").alt = producto.nombre;
+
+   function agregarAlCarrito() {
+    let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+    let productoEnCarrito = carrito.find(p => p.id === producto.id);
+    if (productoEnCarrito) {
+      productoEnCarrito.cantidad++;
+    } else {
+      carrito.push({ ...producto, cantidad: 1 });
+    }
+    localStorage.setItem("carrito", JSON.stringify(carrito));
+
+    // Actualizá el contador del carrito en el header si está
+    if (typeof actualizarContadorCarrito === "function") actualizarContadorCarrito();
+
+    alert("Producto agregado al carrito");
+  }
+
+  document.querySelector("button").onclick = agregarAlCarrito;
+
 }
