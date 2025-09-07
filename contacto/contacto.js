@@ -12,7 +12,7 @@ const estado = document.getElementById("estado");
   const elEmailEsValido = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
   if (!name || !email || !mensaje) {
-    estado.textContent = "Por favor, complete los campos";
+    estado.textContent = "Por favor, complete todos los campos";
     estado.className = "error";
     return;
   }
