@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hermanos Jota</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="catalogo/catalogo.css" />
+
     <script src="script.js" defer></script>
     <link rel="shortcut icon" href="./imagenes/logo.svg" />
     
@@ -22,43 +24,43 @@
         <nav>
             <ul>
                 <li><a href="index.html">Inicio</a></li>
-                <li><a href="catalogo/catalogo.html">Catálogo</a></li>
-                <li><a href="contacto/contacto.html">Contacto</a></li>
-                <li><a href="#">🛒 Carrito (0)</a></li>
+                <li><a href="#/catalogo">Catálogo</a></li>
+                <li><a href="#/contacto">Contacto</a></li>
+                <li><a id="carrito" type="button" href="">🛒 Carrito (<span id="contador-carrito">0</span>)</a></li>
+
             </ul>
         </nav>
         </div>
     </header>
-    <main>
-        <section class="hero-banner">
-           <img src="imagenes/hero.png"  alt="Muebles de diseño Hermanos Jota" id="hero-imagen">
-            <div class="hero-texto">
-                <h2>Diseño artesanal con estilo moderno</h2>
-                <p>Más de 30 años fabricando muebles únicos</p>
-                <a href="catalogo/catalogo.html" class="btn">Ver Catálogo</a>
+   <main id="app">
+       
+   </main>
+
+    <div id="carritoModal">
+        <div class="modal-content">
+            <div class="modal-header">
+            <h4>Carrito de Compras</h4>
+            <button class="close-btn" id="cerrarCarritoBtn" aria-label="Cerrar">&times;</button>
             </div>
-        </section>
-
-        <section class="destacados">
-            <h2>Productos Destacados</h2>
-
-            <div class="carousel-container">
-                <button class="carousel-btn prev" aria-label="Anterior">⟨</button>
-
-                <div class="carousel-window">
-                <div id="productos-destacados" class="carousel-track"></div>
-                </div>
-
-                <button class="carousel-btn next" aria-label="Siguiente">⟩</button>
+            <div class="modal-body" id="carritoItemsContainer">
+            <!-- Productos cargan aquí -->
             </div>
-        </section>
-    </main>
+            <div class="total-pagar" id="totalPagar">Total a pagar: $0</div>
+            <button class="vaciar-btn" id="vaciarCarritoBtn">Vaciar carrito</button>
+ </div>
+</div>
+<!-- Al final del body cargar los .js que tengan datos -->
+<script src="productos.js" defer></script>
+<script src="catalogo/catalogo.js" defer></script>
+<script src="catalogo/producto.js" defer></script>
+<script src="contacto/contacto.js" defer></script>
+<script src="carrito/carrito.js" defer></script>
+<script src="route.js" defer></script>
 
     <footer>
         <p>&copy; 2025 Hermanos Jota - Todos los derechos reservados</p>
         <p>📍 Dirección: Calle que no existe 333, Ciudad</p>
         <p>📞 Tel: (011) 1111-2222</p>
-
     </footer>
 </body>
 </html>

@@ -7,11 +7,22 @@
   --oro: #D4A437;
   --rosa: #C47A6D;
 
-  --fuente-base: 'Inter', sans-serif;
-  --fuente-titulos: 'Playfair Display', Georgia, serif;
+  /*--fuente-base: 'Inter', sans-serif;
+  --fuente-titulos: 'Playfair Display', Georgia, serif;*/
 }
 
-* {
+/*
+
+footer {
+  background-color: var(--siena);
+  color: white;
+  text-align: center;
+  padding: 1rem;
+  margin-top: 2rem;
+  font-size: 0.85rem;
+} 
+  
+*{
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -23,7 +34,6 @@ body {
   color: #333;
   line-height: 1.6;
   font-size: 16px;
-}
 
 header {
   background-color: var(--siena);
@@ -60,11 +70,16 @@ nav a:hover {
   color: var(--oro);
 }
 
+
 main {
   padding: 1rem;
   max-width: 1200px;
   margin: auto;
 }
+}*/
+
+
+
 
 #lista-productos {
   display: grid;
@@ -146,18 +161,11 @@ button:hover {
   background-color: var(--rosa);
 }
 
-footer {
-  background-color: var(--siena);
-  color: white;
-  text-align: center;
-  padding: 1rem;
-  margin-top: 2rem;
-  font-size: 0.85rem;
-}
+
 
 @media (min-width: 480px) {
   .card img {
-    height: 200px;
+    height: 50%;
   }
 }
 
@@ -165,15 +173,7 @@ footer {
   #lista-productos {
     grid-template-columns: repeat(2, 1fr);
   }
-  header {
-    text-align: left;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-  nav ul {
-    gap: 1.5rem;
-  }
+ 
 }
 
 @media (min-width: 1024px) {
