@@ -27,7 +27,7 @@ function initCarousel() {
       <img src="${p.imagen}" alt="${p.nombre}">
       <h3>${p.nombre}</h3>
       <p>$${p.precio}</p>
-      <a href="catalogo/producto${p.id}.html">Ver más</a>
+      <a href="#/producto?id=${p.id}">Ver más</a>
     `;
     track.appendChild(card);
   });
