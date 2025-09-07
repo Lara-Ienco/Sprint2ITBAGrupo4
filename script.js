@@ -1,12 +1,12 @@
 const productos2 = [
-  { id: 1, nombre: "blaa", precio: 12000, imagen: "imagenes/Escritorio Costa.png" },
-  { id: 2, nombre: "blaa", precio: 45000, imagen: "imagenes/Sofá Patagonia.png" },
-  { id: 3, nombre: "blaa", precio: 28000, imagen: "imagenes/Butaca Mendoza.png" },
-  { id: 4, nombre: "blaa", precio: 60000, imagen: "imagenes/Mesa Comedor Pampa.png" },
-  { id: 5, nombre: "blaa", precio: 15000, imagen: "imagenes/Mesa de Centro Araucaria.png" },
-  { id: 6, nombre: "blaa", precio: 35000, imagen: "imagenes/Silla Belgrano.png" },
-  { id: 7, nombre: "blaa", precio: 9000, imagen: "imagenes/Aparador Uspallata.png" },
-  { id: 8, nombre: "blaa", precio: 75000, imagen: "imagenes/Biblioteca Recoleta.png"}
+  { id: 1, nombre: "Escritorio Costa", precio: 12000, imagen: "imagenes/Escritorio Costa.png" },
+  { id: 2, nombre: "Sofa Patagonia", precio: 45000, imagen: "imagenes/Sofá Patagonia.png" },
+  { id: 3, nombre: "Butaca Mendoza", precio: 28000, imagen: "imagenes/Butaca Mendoza.png" },
+  { id: 4, nombre: "Mesa de comedor Pampa", precio: 60000, imagen: "imagenes/Mesa Comedor Pampa.png" },
+  { id: 5, nombre: "Mesa de centro Araucaria", precio: 15000, imagen: "imagenes/Mesa de Centro Araucaria.png" },
+  { id: 6, nombre: "Sillon Copacabana", precio: 35000, imagen: "imagenes/sillón copacabana.png" },
+  { id: 7, nombre: "Aparador Uspallata", precio: 9000, imagen: "imagenes/Aparador Uspallata.png" },
+  { id: 8, nombre: "Biblioteca Recoleta", precio: 75000, imagen: "imagenes/Biblioteca Recoleta.png"}
 ];
 
 function initCarousel() {
@@ -27,7 +27,7 @@ function initCarousel() {
       <img src="${p.imagen}" alt="${p.nombre}">
       <h3>${p.nombre}</h3>
       <p>$${p.precio}</p>
-      <a href="catalogo/producto${p.id}.html">Ver más</a>
+      <a href="#/producto?id=${p.id}">Ver más</a>
     `;
     track.appendChild(card);
   });
