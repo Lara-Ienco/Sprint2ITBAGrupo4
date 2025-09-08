@@ -21,7 +21,7 @@ El sitio incluye:
 * Un *catálogo de productos* con su propio HTML y CSS.
 * Navegación desde el index.html hacia secciones como *Catálogo* y *Contacto*.
 * Páginas individuales para cada producto con su descripción y detalles.
-* Un *carrito de compras, que se muestra como **modal* con información resumida de los productos seleccionados.
+* Un *carrito de compras, que se muestra como* *modal* con información resumida de los productos seleccionados.
 * Un *carrusel de productos* interactivo usando *JavaScript y CSS* para mejorar la experiencia de usuario.
 
 ## 🛠 Tecnologías utilizadas
